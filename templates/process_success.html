@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block title %}Imagen Procesada{% endblock %} {%
+block content %}
+<h3>
+  Imagen {{ original_name }} procesada y guardada como {{ processed_name }}.
+</h3>
+<a href="/processed">Ver imágenes procesadas</a> |
+<a href="/">Volver a la principal</a>
+{% endblock %}

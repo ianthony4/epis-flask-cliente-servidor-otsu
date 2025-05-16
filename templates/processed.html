@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Imágenes Procesadas{% endblock %} {%
+block content %}
+<h2>Imágenes Procesadas en el Servidor</h2>
+{% if images %}
+<div class="gallery">
+  {% for img in images %}
+  <div class="image-card">
+    <img src="{{ url_for('static', filename='processed/' ~ img) }}" />
+    <p>{{ img }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>No hay imágenes procesadas aún.</p>
+{% endif %} {% endblock %}

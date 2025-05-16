@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Seleccionar Imagen{% endblock %} {%
+block content %}
+<h2>Imágenes en el Servidor</h2>
+<div class="gallery">
+  {% for img in images %}
+  <div class="image-card">
+    <img src="{{ url_for('static', filename=img) }}" />
+    <p>{{ img }}</p>
+    <form action="{{ url_for('process_image', image_name=img) }}" method="post">
+      <button type="submit">Procesar (Otsu)</button>
+    </form>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

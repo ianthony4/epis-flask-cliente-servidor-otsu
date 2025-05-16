@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Galería{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/main.css') }}"
+    />
+    <!-- Dropzone CSS y JS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div>
+        <a href="/">Inicio</a>
+        <a href="/upload">Subir Imagen</a>
+        <a href="/processed">Imágenes Procesadas</a>
+      </div>
+    </header>
+
+    <main style="padding: 20px">{% block content %} {% endblock %}</main>
+  </body>
+</html>
